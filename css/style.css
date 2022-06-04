@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.game-board {
+  margin: 0 auto;
+  width: 80%;
+  height: 500px;
+  border: 1px solid #333;
+  position: relative;
+  background: rgb(253, 253, 250);
+  background: linear-gradient(
+    rgba(0, 212, 255, 1) 5%,
+    rgba(253, 253, 250, 1) 100%
+  );
+}
+
+.pipe {
+  width: 80px;
+  position: absolute;
+  bottom: 0;
+  right: calc(0% - 80px);
+  animation: pipe-moving 3s linear infinite;
+}
+
+.mario {
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+}
+
+.jump {
+  animation: jump 500ms;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+
+  40% {
+    bottom: 180px;
+  }
+  50% {
+    bottom: 180px;
+  }
+  60% {
+    bottom: 180px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes pipe-moving {
+  from {
+    right: calc(0% - 80px);
+  }
+
+  to {
+    right: calc(100%);
+  }
+}
